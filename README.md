@@ -1,2 +1,3 @@
 # theGerrymandering
-game
+fun game of gerrymandering
+
