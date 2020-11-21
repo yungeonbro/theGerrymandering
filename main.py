@@ -39,7 +39,11 @@ class Game:
         #print(self.board)
 
     def removeVoters(self, listOfVoters):
-
+        if len(listOfVoters)!=5: # if not 5 area, return none 
+            return None
+        for i in listOfVoters:
+            if self.board[i[0]][i[1]] == None:
+                return None 
         if not isConnected(listOfVoters): #if the voters are not connected, return None
             return None
 
