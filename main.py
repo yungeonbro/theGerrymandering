@@ -30,15 +30,43 @@ class Game:
 
         tmplist = list(range(4*n*n))
         democratsnumbers = random.sample(tmplist, 2*n*n)
-        print(democratsnumbers)
+        #print(democratsnumbers)
         self.board = [[0 for i in range(2*n)] for j in range(2*n)]
 
         for i in democratsnumbers:
             self.board[i%(2*n)][int(i/(2*n))] = 1
 
-        print(self.board)
+        #print(self.board)
 
+    def removeVoters(self, listOfVoters):
 
+        if not isConnected(listOfVoters): #if the voters are not connected, return None
+            return None
+
+        x = [self.board[voter[0]][voter[1]] for voter in listOfVoters] # x is the list of votes that the voters took
+
+        for voter in listOfVoters: # setting all the voters who voted to None
+            self.board[voter[0]][voter[1]] = None
+
+        demcnt = 0  # checking who won the election between 5 of voters
+        repcnt = 0
+        for i in x:
+            if i == None:
+                return None
+            elif i == 0:
+                repcnt += 1
+            elif i == 1:
+                demcnt += 1
+
+        if demcnt + repcnt == 5: # if they don't add up to 5, there is some value such that they or not 0 or 1
+            if demcnt > repcnt: # did democrats win??
+                self.demPoint += 1
+            else: #republicans win
+                self.repPoint += 1
+        else: #they dont add up to 5
+            return None
+
+        return 0 #not returning None
 
 
 
