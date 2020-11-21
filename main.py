@@ -4,7 +4,7 @@ import random
 map = [[0,1],[1,0], [-1,0],[0,-1]]
 def isNear(twoPoints):
     for i in map:
-        if (twoPoints[0][0] + i[0]) == twoPoints[1][0]) and (twoPoints[0][1] + i[1]) == twoPoints[1][1]):
+        if (twoPoints[0][0] + i[0] == twoPoints[1][0]) and (twoPoints[0][1] + i[1] == twoPoints[1][1]):
             return True
     return False
 
@@ -25,6 +25,8 @@ class Game:
     def __init__(self, n):
 
         self.turn = 0
+        self.demPoint = 0
+        self.repPoint = 0
 
         tmplist = list(range(4*n*n))
         democratsnumbers = random.sample(tmplist, 2*n*n)
@@ -34,4 +36,9 @@ class Game:
         for i in democratsnumbers:
             self.board[i%(2*n)][int(i/(2*n))] = 1
 
-        print(self.board) 
+        print(self.board)
+
+
+
+
+
