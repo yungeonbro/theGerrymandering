@@ -7,6 +7,8 @@ pygame.init()
 #info of game
 whoseturn = 1#dem
 clicked = []
+isrepdone = False
+isdemdone = False
 
 #Define the colors we will use in RGB format
 BLACK= ( 0,  0,  0)
@@ -44,6 +46,8 @@ clock= pygame.time.Clock()
 while not done:
     clock.tick(10)
 
+    done = isrepdone and isdemdone
+    
     # Main Event Loop
     for event in pygame.event.get():# User did something
         if event.type == pygame.QUIT:# If user clicked close
@@ -69,13 +73,19 @@ while not done:
                 res = game.removeVoters(clicked)
                 if res == 0:
                     clicked = []#make empty
-                    if whoseturn == 0:
-                        whoseturn = 1
-                    else:
-                        whoseturn = 0
+                    if not isrepdone and not isdemdone:
+                        if whoseturn == 0:
+                            whoseturn = 1
+                        else:
+                            whoseturn = 0
 
             if width/2-10>=pos[0] and pos[0]>width/2+10-outerradius+20 and  height/2+outerradius+10<=pos[1] and pos[1]<= height/2+outerradius+10+height/2 - outerradius - 20:#gerrymanderbutton
-                print("sdf")
+                if whoseturn == 0:
+                    whoseturn = 1
+                    isrepdone = True
+                else:
+                    whoseturn = 0
+                    isdemdone = True
     
     screen.fill(WHITE)
     if whoseturn  == 1:
@@ -104,12 +114,21 @@ while not done:
     screen.blit(gerrymanderbuttontext, (470, 567))
 
     pygame.draw.rect(screen, GREY, [width/2-10, height/2+outerradius+10, -outerradius+20, height/2 - outerradius - 20]) #giveup button
-
-    demtext = bigfont.render(str(game.demPoint), True, BLUE)
+    imdonetext = font.render("I'm done!", True, (0, 0, 0))
+    screen.blit(imdonetext, (250, 567))
+    if not isdemdone:
+        demtext = bigfont.render(str(game.demPoint), True, BLUE)
+    else:
+        demtext = bigfont.render(str(game.demPoint), True, BLACK)
     screen.blit(demtext, ((width/2-outerradius)/2-demtext.get_size()[0]/2, 50))
 
-    reptext = bigfont.render(str(game.repPoint), True, RED)
+    if not isrepdone:
+        reptext = bigfont.render(str(game.repPoint), True, RED)
+    else:
+        reptext = bigfont.render(str(game.repPoint), True, BLACK)
     screen.blit(reptext, (width/2+outerradius+(width/2-outerradius)/2-demtext.get_size()[0]/2, 50))
+
+    
     
     pygame.display.flip()
 
