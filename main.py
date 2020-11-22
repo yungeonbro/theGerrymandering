@@ -29,7 +29,7 @@ class Game:
         self.repPoint = 0
 
         tmplist = list(range(4*n*n))
-        democratsnumbers = random.sample(tmplist, 2*n*n)
+        democratsnumbers = random.sample(tmplist, 2*n*n - 1)
         #print(democratsnumbers)
         self.board = [[0 for i in range(2*n)] for j in range(2*n)]
 
