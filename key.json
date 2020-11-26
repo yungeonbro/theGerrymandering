@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gerrymandering-36b75",
+  "private_key_id": "ea28946a5980d6f2fe81acef7faa9a460695c8d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDFhpjITrWg+wPN\nXJAjMizXKeolIgf7rUPi6AFuN+KHDnLDcRGLj/dN1mVnkWJpiv6fiYoXOt54vrrM\nX1jB0pk4OhcBmdNYBih5V0BpFwQLiulb7lRl+FpNqNBMsXvyBlz6FnQ3OsGM4vXF\nOq0Bbl7opgtos504unaySI3AtG60OTBvsbLfGj2cBCP/q/c8jR2a9/89T3gmO4Gm\nwmNsZng3zrxzcY58rFcWTFTUrLbPD/NkxGcz5oPvqFXQ/5JkOLqvw4ACqHfgt3YN\n38HhWSqkx8+V2IFYwwD+uJzJIu0k7B35uvhcHz9Fmpg04kxYeQUEYdS+7qjbjFWc\nhuvjHiThAgMBAAECggEAAPYztySAyG72QwzNO/L/3UFqzp1LnzNaZuZs1BXTY/vc\nBnXDvzIHV37zjlpx86zf8CLqwQYzcaTgdFJJEZ5W4btiT3lSQwRdYs+tZeE6Q0Ta\nDxv7l8LHzFLRjHPdIs9DTbgN57Y1V8T+CJ7kspFEo/Cd72wGRqvjM1WQ6x8Yr/s3\nSbYrK+0yTniPGFmGp9ACLWxPuw7ipDrnKbM0v/nTvRWzYSYuNVq9f5iqAyJqqWhc\nX2mJzodH1otliCTPRbn2Ats64oH8BJwQd7jl9Tx1hMoAcWWTl18FRpbFTiNHaNVv\nijy6U4hhM34UJDf2OQb64D2t3EnqcCQ9V2gP611uYQKBgQDye9fs0gy5GBSEFTVk\nUGaP55MnRigS7QAWHpygYmQIIuhDmnd5BFWAXX8RfGLQrkcduAxs4R+RojmfUp2J\ncUqZ1jb3qC2xrtx8+u4dRYa5esuobJ6uIEuKUdqeY/xp13+ihBHFe5+l+979wGMQ\nnWLoi+gqsKQBfOlZkwegmqcO3QKBgQDQiTgGmDVMeg1K3+Zg1izVfJezkP0wQOQY\nDHJGGiz4B34YVHF7g4oVd50mCnz4gKzbsQUvgxAGR+uD9ENJk5BA3mNQQibE/SFw\nRjcKm+zSenOm/LhgPq+KrkngM2DJOqhtIpeuErHFvBagooI79VgfI0eyGrleY6LQ\n2iF1K1/z1QKBgQDSEJWbtNCO3RyQ3Gq3r6taSWzC3lVDKAwmHXjkvLgaEFuUjVGp\nBicoIFc/h7l3PTOgvFwPSuv1V0uCCakuc3YEVX6jCBAl2O1sXFpCA4RWVNnv28GP\n6axndMfm5Ym7C5Sn7rASnClPOycQP0XTE/WmreWAbix2mYbyMZyu9qt5BQKBgG+N\nl+zfK1PXzpiJIYIX0C/70GL8YpSXgezja5XYlsmvqGJ3eaVq/kjxjZ016xg8LTvw\nfCeoYsAZZQFXf08you4wiMv8NyUVi/e1d+gy9QK7AncHpdHGdr0m8tn+Yf4DZOnM\noXs7AOIX9brEdAqC+jrd8pJx/Uti3UwAA/nb1B5pAoGBAJtogaFROqrcC3uNUkbd\nruhN3jbZScAJJA78yoKRVXBUI+GKvtfZmr3ZpS6kUZM0I4UkkBU2igR9h02q0Ahd\nGKYwgTyhsvTEnAdT+aQsFS+BnlodvYYuh2H/jwXf0jkx36fvp4LAxiB48MluQgLC\nXzAR+VJ3cByJuZIpowflXSx8\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-jk21t@gerrymandering-36b75.iam.gserviceaccount.com",
+  "client_id": "118286785732576103171",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-jk21t%40gerrymandering-36b75.iam.gserviceaccount.com"
+}
