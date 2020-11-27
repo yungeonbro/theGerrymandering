@@ -18,7 +18,7 @@ def playGame(pwd, side):
     print('you are playing as '+side)
     if side == 'dem':
         manager.addGameInfo(pwd)
-    gameplay.play(side)
+    gameplay.playGame(side)
 
 
 pwd = input('Enter password : ')
@@ -31,7 +31,7 @@ print(isWaitingGame)
 if not isWaitingGame:
     manager.addGame(pwd)
     wait(pwd)
-    play(pwd, 'dem')
+    playGame(pwd, 'dem')
 if isWaitingGame:
-    play(pwd, 'rep')
+    playGame(pwd, 'rep')
 
