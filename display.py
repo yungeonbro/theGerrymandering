@@ -53,13 +53,13 @@ while not done:
 
     # Main Event Loop
     for event in pygame.event.get():# User did something
-    	if event.type == pygame.KEYDOWN:
-    		if event.key == pygame.K_SPACE:
-    			clicked = []
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                clicked = []
 
-    	if event.type == pygame.QUIT:# If user clicked close
-        	done=True # Flag that we are done so we exit this loop
-    	if event.type == pygame.MOUSEBUTTONUP:
+        if event.type == pygame.QUIT:# If user clicked close
+            done=True # Flag that we are done so we exit this loop
+        if event.type == pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
             np = [pos[0], pos[1]]
             np[0] -= width/2-outerradius
