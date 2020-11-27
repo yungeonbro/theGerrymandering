@@ -14,10 +14,10 @@ def wait(pwd): # wait until appointment comes up
     return
 
 
-def play(pwd, side): 
+def playGame(pwd, side): 
     print('you are playing as '+side)
     if side == 'dem':
-        manager.addGameInfo()
+        manager.addGameInfo(pwd)
     gameplay.play(side)
 
 
