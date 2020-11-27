@@ -6,7 +6,7 @@ from ServerManager import *
 import time
 import gamelogic
 
-def playGame(side)
+def playGame(side):
 	sizeofgame = 6
 	game = main.Game(sizeofgame)
 	pygame.init()
