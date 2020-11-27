@@ -13,8 +13,7 @@ class ServerManager:
 			'databaseURL' : databaseURL
 			})
 
-		dir = db.reference();
-		dir.update({'games':[{'password':'initial', 'started':False, 'ended':False}]})
+
 
 
 
