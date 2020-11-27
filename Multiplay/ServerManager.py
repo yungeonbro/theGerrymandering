@@ -44,7 +44,18 @@ class ServerManager:
 		for game in data['games']:
 			if game['password'] == pwd:
 				return game['started']
-		return False
+
+	def getSizeOfGame(self):
+		return 6
+
+	def addGameInfo(self, pwd):
+		self.directory = db.reference()
+		data = self.directory.get()
+		for game in data['games']:
+			if game['password'] == pwd:
+				game['gameinfo']={'turn':0, 'demPoint':0, 'repPoint':0, 'map':[[]]}
+		self.directory.update(data)
+		
 if __name__  == "__main__":
 	manager = ServerManager('key2.json',  'https://gerrymandering-296813.firebaseio.com/')
 	print(manager.isWaitingGame('saaaa'))
