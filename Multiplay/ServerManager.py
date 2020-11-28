@@ -1,7 +1,12 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+from gamelogic import *
+import time
 
+
+def lisenter(event):
+	print(event.data)
 
 class ServerManager:
 	def __init__(self, certificatepath, databaseURL):
@@ -13,7 +18,7 @@ class ServerManager:
 			'databaseURL' : databaseURL
 			})
 
-
+		firebase_admin.db.reference('gerrymandering-296813/games').listen(lisenter)
 
 
 
@@ -53,9 +58,34 @@ class ServerManager:
 		data = self.directory.get()
 		for game in data['games']:
 			if game['password'] == pwd:
-				game['gameinfo']={'turn':0, 'demPoint':0, 'repPoint':0, 'map':[[]]}
+				game['gameinfo']={'turn':0, 'demPoint':0, 'repPoint':0}
 		self.directory.update(data)
-		
+
+	def upLoadGame(self, pwd, rgame):
+		self.directory = db.reference()
+		data = self.directory.get()
+		for game in data['games']:
+			if game['password'] == pwd:
+				print(game)
+				game['gameinfo']['turn'] = rgame.turn
+				game['gameinfo']['demPoint'] = rgame.demPoint
+				game['gameinfo']['repPoint'] = rgame.repPoint
+				game['gameinfo']['board'] = rgame.board
+		self.directory.update(data)
+
+	def downLoadGame(self, pwd):
+		time.sleep(4)
+		self.directory = db.reference()
+		data = self.directory.get()
+		for game in data['games']:
+			if game['password'] == pwd:
+				retgame = Game(6)
+				retgame.turn = game['gameinfo']['turn']
+				retgame.demPoint = game['gameinfo']['demPoint']
+				retgame.repPoint = game['gameinfo']['repPoint']
+				retgame.board = game['gameinfo']['board']
+				return retgame
+
 if __name__  == "__main__":
 	manager = ServerManager('key2.json',  'https://gerrymandering-296813.firebaseio.com/')
 	print(manager.isWaitingGame('saaaa'))
