@@ -172,5 +172,7 @@ def playGame(side, pwd, manager):
 		
 		
 		pygame.display.flip()
+
+	manager.destroyGame(pwd)
 	time.sleep(5)
 	pygame.quit()
