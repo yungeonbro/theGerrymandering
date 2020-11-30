@@ -1,6 +1,6 @@
 # theGerrymandering
 
-play game : run offlineplay.py or onlineplay.py
+play game : run offlineplay.py or GuiStart.py
 
 # How to win
 you win if you get more seats than opponent
