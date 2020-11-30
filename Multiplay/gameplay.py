@@ -6,6 +6,16 @@ from ServerManager import *
 import time
 import gamelogic
 
+game = None
+manager = None
+
+def update():
+	try:
+		print('updated')
+		game = manager.downLoadGame(pwd)
+	except:
+		print('update failed')
+
 def playGame(side, pwd, manager):
 
 	sizeofgame = 6
@@ -127,8 +137,8 @@ def playGame(side, pwd, manager):
 			pygame.draw.rect(screen, LIGHTRED, [width/2, 0, width/2, height])
 		#pygame.draw.rect(screen, BLACK, [width/2-outerradius, height/2-outerradius, 2*outerradius, 2*outerradius], 5)
 
-		for i in range(2*sizeofgame):
-			for j in range(2*sizeofgame):
+		for i in range(12):
+			for j in range(12):
 				party = game.board[i][j]
 				color = GREY
 				if party == 0: #rep

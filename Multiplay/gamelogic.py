@@ -31,10 +31,10 @@ class Game:
         tmplist = list(range(4*n*n))
         democratsnumbers = random.sample(tmplist, 2*n*n - 2)
         #print(democratsnumbers)
-        self.board = [[0 for i in range(2*n)] for j in range(2*n)]
+        self.board = [[0 for i in range(2*n)] for j in range(2*n)] #republicans
 
         for i in democratsnumbers:
-            self.board[i%(2*n)][int(i/(2*n))] = 1
+            self.board[i%(2*n)][int(i/(2*n))] = 1 #democrat
 
         #print(self.board)
 
@@ -50,7 +50,7 @@ class Game:
         x = [self.board[voter[0]][voter[1]] for voter in listOfVoters] # x is the list of votes that the voters took
 
         for voter in listOfVoters: # setting all the voters who voted to None
-            self.board[voter[0]][voter[1]] = None
+            self.board[voter[0]][voter[1]] = 2
 
         self.turn += 1
         demcnt = 0  # checking who won the election between 5 of voters

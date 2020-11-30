@@ -42,7 +42,7 @@ class Game:
         if len(listOfVoters)!=5: # if not 5 area, return none 
             return None
         for i in listOfVoters:
-            if self.board[i[0]][i[1]] == None:
+            if self.board[i[0]][i[1]] == 2:
                 return None 
         if not isConnected(listOfVoters): #if the voters are not connected, return None
             return None
